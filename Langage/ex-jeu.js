@@ -30,7 +30,7 @@ function jouer() {
     console.log('Vous avez déjà joué : ' + essais.join(' | ') + '.');
   }
 
-  rl.question("Quel est le nombre entier ? ", answer => {
+  rl.question("Quel est le nombre entier ? ", (answer) => {
     const entierSaisi = parseInt(answer);
 
     if (isNaN(entierSaisi)) {
@@ -53,3 +53,9 @@ function jouer() {
   });
 }
 jouer();
+
+// ^
+// |                  question               question
+// |question          jouer                  jouer
+// |jouer    ...      =>       ...           =>
+// +----------------------------------------------------->

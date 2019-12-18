@@ -12,8 +12,8 @@ function externe(msg) {
 const hello = externe('Hello');
 const bonjour = externe('Bonjour');
 
-hello();
-bonjour();
+hello(); // Hello
+bonjour(); // Bonjour
 hello();
 bonjour();
 
