@@ -6,6 +6,8 @@ const formElt = document.querySelector('#todo-form');
 const inputElt = document.querySelector('#todo');
 /** @type {HTMLDivElement} */
 const listElt = document.querySelector('.todo-list');
+/** @type {HTMLInputElement} */
+const toggleElt = document.querySelector('#todo-toggle');
 
 formElt.addEventListener('submit', (event) => {
   event.preventDefault();
@@ -20,6 +22,21 @@ formElt.addEventListener('submit', (event) => {
   );
 });
 
+listElt.addEventListener('click', (event) => {
+  if (!event.target.classList.contains('todo-remove')) {
+    return;
+  }
+  const rowElt = event.target.parentElement;
+  listElt.removeChild(rowElt);
+});
+
+toggleElt.addEventListener('click', () => {
+  /** @type {NodeListOf<HTMLInputElement>} */
+  const checkboxes = listElt.querySelectorAll('.todo-completed');
+  for (const checkbox of checkboxes) {
+    checkbox.checked = toggleElt.checked;
+  }
+});
 // Exercice
 /*
 En s'inspirant de todomvc.com
