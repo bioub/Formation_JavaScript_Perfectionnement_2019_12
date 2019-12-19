@@ -18,16 +18,16 @@ hello();
 bonjour();
 
 // (pause 1s) 3 3 3
-for (var i = 0; i < 3; i++) {
+for (var l = 0; l < 3; l++) {
   setTimeout(function() {
-    console.log(i);
+    console.log(l);
   }, 1000);
 }
 
 // closure (sauvegarder i)
 // (pause 1s) 0 1 2
-for (var i = 0; i < 3; i++) {
-  setTimeout(externe(i), 1000);
+for (var k = 0; k < 3; k++) {
+  setTimeout(externe(k), 1000);
 }
 for (let i = 0; i < 3; i++) {
   setTimeout(function() {
@@ -40,12 +40,12 @@ for (let i = 0; i < 3; i++) {
 function setTimeoutSync(fct, delay) {
   const debut = Date.now();
   // PAUSE delay
-  while(debut + delay > Date.now());
+  while (debut + delay > Date.now());
 
   fct();
 }
-for (var i = 0; i < 3; i++) {
+for (var j = 0; j < 3; j++) {
   setTimeoutSync(function() {
-    console.log(i);
+    console.log(j);
   }, 1000);
 }

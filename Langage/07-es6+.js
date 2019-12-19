@@ -2,23 +2,23 @@ const add = (a, b) => a + b;
 //          function(a, b) { return a + b; };
 const hello = (name) => `Hello ${name}`;
 // const hello = (name) => `Hello ${name}`;
-const pileOuFace = () => (Math.random() > 0.5 ? "pile" : "face");
+const pileOuFace = () => (Math.random() > 0.5 ? 'pile' : 'face');
 
 console.log(add(1, 2));
-console.log(hello("Romain"));
+console.log(hello('Romain'));
 console.log(pileOuFace());
 
 const callbackJouer = (entierAlea, entierSaisi) => {
   if (entierAlea < entierSaisi) {
-    console.log('Trop grand')
+    console.log('Trop grand');
   }
 };
 
 // si retour de type objet ajouter des parenthèses
-const getCoords = (x, y) => ({x: x, y: y});
+// const getCoords = (x, y) => ({x: x, y: y});
 
 // Quand la variable et la clé on le même nom, on peut utiliser shorthand property
-const getCoords = (x, y) => ({x, y});
+const getCoords = (x, y) => ({ x, y });
 
 // REST params
 // conversion : liste de valeurs -> tableau (ex: 3, 4 -> [3, 4])
@@ -62,15 +62,15 @@ const fullName = 'Romain Bohdanowicz';
 
 // Destructurer un tableau
 //    ['Romain', 'Bohdanowicz']
-const [prenom  , nom          ] = fullName.split(' ');
+const [prenom, nom] = fullName.split(' ');
 
 const letters = ['a', 'b', 'c', 'd', 'e', 'f'];
 //    ['a', 'b', 'c', 'd', 'e', 'f']
-const [a  , b  , ...others         ] = letters; // REST Params
+const [a, b, ...others] = letters; // REST Params
 
 const [un, deux, trois = 3] = [1, 2]; // default value
 
 // Destructurer un objet
-const coords = {x: 1, y: 2};
+const coords = { x: 1, y: 2 };
 //    {x: 1   , y: 2          }
-const {x: newX, y: newY, z = 3} = coords;
+const { x: newX, y: newY, z = 3 } = coords;

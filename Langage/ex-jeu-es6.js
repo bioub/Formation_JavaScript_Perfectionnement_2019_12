@@ -17,7 +17,7 @@ const Random = {
   },
 };
 
-const readline = require("readline");
+const readline = require('readline');
 
 class Jeu {
   constructor(options = {}) {
@@ -27,7 +27,7 @@ class Jeu {
 
     this.rl = readline.createInterface({
       input: process.stdin,
-      output: process.stdout
+      output: process.stdout,
     });
     this.entierAlea = Random.getIntInclusive(min, max);
     this.essais = [];
@@ -35,27 +35,27 @@ class Jeu {
   jouer() {
     if (this.essais.length) {
       //console.log("Vous avez déjà joué : " + this.essais.join(" | ") + ".");
-      console.log(`Vous avez déjà joué : ${this.essais.join(" | ")}.`);
+      console.log(`Vous avez déjà joué : ${this.essais.join(' | ')}.`);
     }
 
-    this.rl.question("Quel est le nombre entier ? ", (answer) => {
+    this.rl.question('Quel est le nombre entier ? ', (answer) => {
       const entierSaisi = Number.parseInt(answer);
 
       if (Number.isNaN(entierSaisi)) {
-        console.log("Erreur: il faut saisir un entier");
+        console.log('Erreur: il faut saisir un entier');
         return this.jouer();
       }
 
       this.essais.push(entierSaisi);
 
       if (entierSaisi < this.entierAlea) {
-        console.log("Trop petit");
+        console.log('Trop petit');
         this.jouer();
       } else if (entierSaisi > this.entierAlea) {
-        console.log("Trop grand");
+        console.log('Trop grand');
         this.jouer();
       } else {
-        console.log("Gagné");
+        console.log('Gagné');
         this.rl.close();
       }
     });

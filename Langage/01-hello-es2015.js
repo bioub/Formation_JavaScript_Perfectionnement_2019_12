@@ -1,4 +1,4 @@
-const names = ["John", "Eric"];
+const names = ['John', 'Eric'];
 
 /**
  * Helloworld

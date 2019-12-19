@@ -1,4 +1,4 @@
-const firstNames = ["John", "Eric", 123];
+const firstNames = ['John', 'Eric', 123];
 
 function h(name: string | number) {
   return `Hello ${name} !`;

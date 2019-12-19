@@ -22,4 +22,4 @@ var globale = 'globale'; // ou module si type="module"
   // |externe
   // |iife
   // +------------------->
-}());
+})();

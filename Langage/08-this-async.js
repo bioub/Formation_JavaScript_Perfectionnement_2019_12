@@ -53,3 +53,22 @@ hello.call(romain, ...['Jean', 'Eric']);
 
 const helloRomain = hello.bind(romain);
 helloRomain('Jean', 'Eric');
+
+// Variables
+// const si possible -> let sinon
+
+// Fonctions
+// si pas dans un objet
+// function hello() {} ou const hello = () => {}
+// si dans un objet
+// class Coords {
+//   maFonction() {
+//
+//   }
+// }
+// const coords = {
+//   maFonction() {
+//
+//   }
+// }
+// si callback toujours () => {} (plus court, et résout le problème avec this)

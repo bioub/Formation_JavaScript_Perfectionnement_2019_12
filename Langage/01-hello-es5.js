@@ -1,7 +1,7 @@
-var names = ["John", "Eric"];
+var names = ['John', 'Eric'];
 
 function hello(name) {
-  return "Hello " + name + " !";
+  return 'Hello ' + name + ' !';
 }
 
 for (var i = 0; i < names.length; i++) {
