@@ -40,3 +40,4 @@ btn.addEventListener('click', (event) => {
 Ex: Au clic de la checkbox class="todo-toggle"
 Cocher ou décocher toutes les autres
 document.querySelectorAll -> NodeList (boucle for of)
+*/
