@@ -29,5 +29,4 @@ export function addTodo(todo, containerElt) {
     <button>-</button>
   </div>
   */
-
 }

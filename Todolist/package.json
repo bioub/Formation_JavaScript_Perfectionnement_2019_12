@@ -4,8 +4,8 @@
     "prettier": "^1.19.1"
   },
   "scripts": {
-    "lint": "eslint *.js",
-    "format": "prettier *.{js,html,json,ts} --write"
+    "lint": "eslint **/*.js",
+    "format": "prettier **/*.{js,html,json,ts} --write"
   },
   "prettier": {
     "arrowParens": "always",
