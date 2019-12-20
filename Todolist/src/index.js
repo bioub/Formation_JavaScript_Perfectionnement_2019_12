@@ -1,4 +1,5 @@
 import { addTodo } from './todo.js';
+import { fetchTodos } from './api.js';
 
 /** @type {HTMLFormElement} */
 const formElt = document.querySelector('#todo-form');
@@ -37,24 +38,12 @@ toggleElt.addEventListener('click', () => {
     checkbox.checked = toggleElt.checked;
   }
 });
-// Exercice
-/*
-En s'inspirant de todomvc.com
 
-Ex: Ajouter une checkbox à gauche des nouvelles lignes
-et un bouton - à droite des nouvelles lignes
-La checkbox doit etre cochée en fonction de todo.completed
-HTMLInputElement -> prop checked / type
-
-Ex: Au clic du bouton moins, supprimer la ligne <div class="todo-row">
-parent du bouton
-parentNode
-removeChild (meilleur compat) / remove (Edge)
-btn.addEventListener('click', (event) => {
-  btn === event.currentTarget
+inputElt.addEventListener('input', () => {
+  localStorage.setItem('todo', inputElt.value);
 });
 
-Ex: Au clic de la checkbox class="todo-toggle"
-Cocher ou décocher toutes les autres
-document.querySelectorAll -> NodeList (boucle for of)
-*/
+inputElt.value = localStorage.getItem('todo');
+
+fetchTodos()
+  .then((todos) => todos.forEach((t) => addTodo(t, listElt)));
